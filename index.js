@@ -20,9 +20,7 @@ class Tree {
     while(stack.length>0){
       let node = stack.pop();
       if(node.data === data) return node;
-      for(let i = 0; i < node.children.length; i++){
-        stack.push(node.children[i]);
-      }
+      stack.push(...node.children);
     }
     return null;
   }
